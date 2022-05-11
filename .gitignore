@@ -1,0 +1,10 @@
+# App files
+app/.eslintcache
+
+# CDK files
+cdk/.env
+
+#IDE files
+.DS_Store
+.idea/
+
