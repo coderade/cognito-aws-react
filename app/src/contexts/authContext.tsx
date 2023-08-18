@@ -9,7 +9,7 @@ export enum AuthStatus {
 }
 
 export interface IAuth {
-  sessionInfo?: { username?: string; email?: string; sub?: string; accessToken?: string; refreshToken?: string }
+  sessionInfo?: { username?: string; email?: string; sub?: string; accessToken?: string; refreshToken?: string, idToken?: string }
   attrInfo?: any
   authStatus?: AuthStatus
   signInWithEmail?: any
@@ -52,8 +52,10 @@ const AuthProvider: React.FunctionComponent = ({ children }) => {
     async function getSessionInfo() {
       try {
         const session: any = await getSession()
+        debugger;
         setSessionInfo({
           accessToken: session.accessToken.jwtToken,
+          idToken: session.idToken.jwtToken,
           refreshToken: session.refreshToken.token,
         })
         window.localStorage.setItem('accessToken', `${session.accessToken.jwtToken}`)

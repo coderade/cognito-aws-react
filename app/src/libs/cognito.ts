@@ -11,6 +11,7 @@ const poolData = {
   ClientId: `${clientId}`,
 }
 
+
 const userPool: CognitoUserPool = new CognitoUserPool(poolData)
 
 let currentUser: any = userPool.getCurrentUser()

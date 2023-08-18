@@ -40,7 +40,7 @@ export default function Home() {
 
     const auth = useContext(AuthContext)
 
-    getDataAxios().then(r => console.log(r));
+    // getDataAxios().then(r => console.log(r));
 
     function signOutClicked() {
         auth.signOut()
@@ -84,12 +84,6 @@ export default function Home() {
                 <Box m={2}>
                     <Typography variant="h5">Session Info</Typography>
                     <pre className={classes.session}>{JSON.stringify(auth.sessionInfo, null, 2)}</pre>
-                </Box>
-                <Box m={2}>
-                    <Typography variant="h5">Iframe</Typography>
-                    <pre className={classes.session}>
-                        <iframe src="http://127.0.0.1:3001/" width={500} height={500}/>
-                    </pre>
                 </Box>
             </Grid>
         </Grid>
